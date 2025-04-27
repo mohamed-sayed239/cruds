@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" hre
+    +++++
+    f="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <h2>cruds</h2>
+    <h3> create read update delete search</h3>
+    <div class="continer">
+        <input type="text" id="title" placeholder="title" required>
+        <div class="inp">
+            <input onkeyup="getTotal()" type="number" id="price" placeholder="price" required>
+            <input onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes" required>
+            <input onkeyup="getTotal()" type="number" id="ads" placeholder="ads" required>
+            <input onkeyup="getTotal()" type="number" id="descount" placeholder="descount" required>
+            <button id="total">total:</button>
+        </div>
+        <input type="number" id="count" placeholder="count" required>
+        <input type="text" id="category" placeholder="category" required>
+        <button id="submit" class="btn">create</button>
+        <input type="text" id="search" placeholder="search" required>
+        <div class="box-btn">
+            <button class="btn">search by title</button>
+            <button  class="btn">search by category</button>
+        </div>
+        <button  class="btn">Delete All(0)</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>descount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>oppo</td>
+                    <td>3000</td>
+                    <td>200</td>
+                    <td>50</td>
+                    <td>100</td>
+                    <td>3150</td>
+                    <td>phone</td>
+                    <td><button>update</button></td>
+                    <td><button>delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="main.js"> </script>
+</body>
+</html>
