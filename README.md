@@ -39,5 +39,5 @@ The data is stored in **LocalStorage**, so it stays saved even after closing the
 
 ---
 
-👨‍💻 Developed by: *Your Name*
+👨‍💻 Developed by: *mohamed sayed *
 
