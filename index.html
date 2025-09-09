@@ -1,69 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" hre
-    +++++
-    f="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>نظام إدارة المنتجات - CRUD</title>
 </head>
 <body>
-    <h2>cruds</h2>
-    <h3> create read update delete search</h3>
-    <div class="continer">
-        <input type="text" id="title" placeholder="title" required>
-        <div class="inp">
-            <input onkeyup="getTotal()" type="number" id="price" placeholder="price" required>
-            <input onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes" required>
-            <input onkeyup="getTotal()" type="number" id="ads" placeholder="ads" required>
-            <input onkeyup="getTotal()" type="number" id="descount" placeholder="descount" required>
-            <button id="total">total:</button>
+    <header>
+        <h2>نظام إدارة المنتجات</h2>
+        <h3>إنشاء - قراءة - تحديث - حذف - بحث</h3>
+    </header>
+    
+    <div class="container">
+        <!-- قسم إدخال البيانات -->
+        <div class="input-section">
+            <h3><i class="fas fa-plus-circle"></i> إضافة منتج جديد</h3>
+            <input type="text" id="title" placeholder="اسم المنتج" required>
+            
+            <div class="input-group">
+                <input onkeyup="calculateTotal()" type="number" id="price" placeholder="السعر" required>
+                <input onkeyup="calculateTotal()" type="number" id="taxes" placeholder="الضرائب" required>
+                <input onkeyup="calculateTotal()" type="number" id="ads" placeholder="الإعلانات" required>
+                <input onkeyup="calculateTotal()" type="number" id="discount" placeholder="الخصم" required>
+                <button id="total-btn"><span id="total-text">المجموع:</span> <span id="total-value">0</span></button>
+            </div>
+            
+            <input type="number" id="count" placeholder="الكمية" required>
+            <input type="text" id="category" placeholder="الفئة" required>
+            
+            <div class="btn-group">
+                <button id="create-btn" class="btn primary"><i class="fas fa-plus"></i> إنشاء</button>
+                <button id="update-btn" class="btn secondary" disabled><i class="fas fa-edit"></i> تحديث</button>
+            </div>
         </div>
-        <input type="number" id="count" placeholder="count" required>
-        <input type="text" id="category" placeholder="category" required>
-        <button id="submit" class="btn">create</button>
-        <input type="text" id="search" placeholder="search" required>
-        <div class="box-btn">
-            <button class="btn">search by title</button>
-            <button  class="btn">search by category</button>
+        
+        <!-- قسم البحث -->
+        <div class="search-section">
+            <h3><i class="fas fa-search"></i> البحث</h3>
+            <input type="text" id="search" placeholder="ابحث عن منتج..." required>
+            
+            <div class="search-options">
+                <button id="search-title-btn" class="btn search-btn active"><i class="fas fa-font"></i> البحث بالاسم</button>
+                <button id="search-category-btn" class="btn search-btn"><i class="fas fa-tag"></i> البحث بالفئة</button>
+            </div>
         </div>
-        <button  class="btn">Delete All(0)</button>
-        <table>
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>title</th>
-                    <th>price</th>
-                    <th>taxes</th>
-                    <th>ads</th>
-                    <th>descount</th>
-                    <th>total</th>
-                    <th>category</th>
-                    <th>update</th>
-                    <th>delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>oppo</td>
-                    <td>3000</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>100</td>
-                    <td>3150</td>
-                    <td>phone</td>
-                    <td><button>update</button></td>
-                    <td><button>delete</button></td>
-                </tr>
-            </tbody>
-        </table>
+        
+        <!-- قسم التحكم -->
+        <div class="control-section">
+            <button id="delete-all-btn" class="btn danger"><i class="fas fa-trash"></i> حذف الكل (<span id="products-count">0</span>)</button>
+        </div>
+        
+        <!-- جدول البيانات -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>اسم المنتج</th>
+                        <th>السعر</th>
+                        <th>الضرائب</th>
+                        <th>الإعلانات</th>
+                        <th>الخصم</th>
+                        <th>المجموع</th>
+                        <th>الفئة</th>
+                        <th>الكمية</th>
+                        <th>التحديث</th>
+                        <th>الحذف</th>
+                    </tr>
+                </thead>
+                <tbody id="products-table-body">
+                    <!-- سيتم ملء هذا القسم عن طريق JavaScript -->
+                </tbody>
+            </table>
+        </div>
     </div>
-    <script src="main.js"> </script>
+
+    <script src="app.js"></script>
 </body>
 </html>

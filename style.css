@@ -1,0 +1,275 @@
+/* ===== أنماط CSS العامة ===== */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1d1d1d;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    direction: rtl;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #bbbbbb;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #2a2a2a;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== أنماط الإدخال والأزرار ===== */
+input {
+    background: #111111;
+    outline: none;
+    width: 100%;
+    border: none;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 8px 0;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+input:focus {
+    transform: scale(1.02);
+    background: #000000;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.input-group input {
+    width: calc(20% - 10px);
+    min-width: 120px;
+}
+
+.input-group button {
+    width: calc(20% - 10px);
+    min-width: 120px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.btn {
+    background: #440263;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    margin: 10px 5px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #681083;
+    transform: translateY(-2px);
+}
+
+.btn.primary {
+    background: #4CAF50;
+}
+
+.btn.primary:hover {
+    background: #3e8e41;
+}
+
+.btn.secondary {
+    background: #2196F3;
+}
+
+.btn.secondary:hover {
+    background: #0b7dda;
+}
+
+.btn.danger {
+    background: #f44336;
+}
+
+.btn.danger:hover {
+    background: #d32f2f;
+}
+
+.btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    background: #666;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.search-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.search-btn {
+    background: #555;
+}
+
+.search-btn.active {
+    background: #2196F3;
+}
+
+/* ===== أنماط الجدول ===== */
+.table-container {
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+thead {
+    background: #440263;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+tr:nth-child(even) {
+    background: #333;
+}
+
+tr:hover {
+    background: #444;
+}
+
+td button {
+    background: #440263;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+td button:hover {
+    background: #681083;
+    transform: scale(1.05);
+}
+
+td button.update {
+    background: #2196F3;
+}
+
+td button.update:hover {
+    background: #0b7dda;
+}
+
+td button.delete {
+    background: #f44336;
+}
+
+td button.delete:hover {
+    background: #d32f2f;
+}
+
+/* ===== أقسام الصفحة ===== */
+.input-section, .search-section, .control-section {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.input-section h3, .search-section h3 {
+    margin-bottom: 15px;
+    color: #4CAF50;
+    font-size: 22px;
+}
+
+/* ===== التجاوب مع الشاشات المختلفة ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 36px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+    
+    .input-group input, .input-group button {
+        width: 100%;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+    }
+    
+    th, td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+    
+    td button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
